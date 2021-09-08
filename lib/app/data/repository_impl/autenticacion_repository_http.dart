@@ -1,5 +1,3 @@
-import 'dart:convert';
-
 import 'package:listo/app/data/repository_impl/http.dart';
 import 'package:listo/app/domain/entities/login/generico_dto.dart';
 import 'package:listo/app/domain/entities/login/inicio_sesion_dto.dart';

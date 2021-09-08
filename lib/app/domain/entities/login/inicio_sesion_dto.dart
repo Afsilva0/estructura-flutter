@@ -20,11 +20,24 @@ class InicioSesionDTO {
         "contrasena": contrasena,
       };
 
-
-
-
-
   /*   SesionDTO sesionDTO = SesionDTO.fromJson( */
   /*          json.decode(jsonEncode(repuesta!.payload).toString())); */
+
+/* 
+  
+  factory InicioSesionDTO.fromJson(String str) =>
+      InicioSesionDTO.fromMap(json.decode(str));
+
+  factory InicioSesionDTO.fromMap(Map<String, dynamic> json) => InicioSesionDTO(
+        correo: json["correo"],
+        contrasena: json["contrasena"],
+      );
+
+  String toJson() => json.encode(toMap());
+
+  Map<String, dynamic> toMap() => {
+        "correo": correo,
+        "contrasena": contrasena,
+      }; */
 
 }

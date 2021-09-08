@@ -44,6 +44,27 @@ class HttpService {
     }
   }
 
+  Future<Object?> get() async {
+    try {
+      final _urlAuth = Constantes.urlBase + endPoint;
+      final Map<String, String> headers = obtenerCabeceras(token);
+
+      final http.Response respuesta =
+          await http.get(Uri.parse(_urlAuth), headers: headers);
+
+      GenericoDTO genericDto =
+          GenericoDTO.fromJson(json.decode(respuesta.body));
+
+      if (genericDto.status == 200) {
+        return genericDto.payload;
+      } else if (genericDto.status == 500) {
+        throw Exception(genericDto.payload);
+      }
+    } catch (e) {
+      throw Exception(e);
+    }
+  }
+
   /* Future<T> put<T>(HttpService<T> resource) async {
     Map<String, String> headers = {
       "Content-Type": "application/json; charset=UTF-8",

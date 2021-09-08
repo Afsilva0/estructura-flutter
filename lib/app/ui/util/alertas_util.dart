@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
 class Alertas {
-  void cargando(BuildContext context) {
-    showDialog(
+  Future<T?> cargando<T>(BuildContext context) {
+    return showDialog(
       context: context,
       barrierDismissible: true,
       builder: (BuildContext context) {

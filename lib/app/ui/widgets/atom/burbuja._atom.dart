@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
 
 class BurbujaWidget extends StatelessWidget {
-
-  const BurbujaWidget({Key? key, this.color, this.child}) : super(key: key);
-    final Color? color;
-    final Widget? child;
+  const BurbujaWidget({
+    Key? key,
+    this.color,
+    this.child,
+  }) : super(key: key);
+  final Color? color;
+  final Widget? child;
   @override
   Widget build(BuildContext context) {
     return Container(
